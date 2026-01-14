@@ -22,7 +22,7 @@ function UserTable(){
     return(
         <div>
             <table className="table">
-  <thead>
+  <thead className="thead-dark">
     <tr>
       <th scope="col">Username</th>
       <th scope="col">isStudent</th>
