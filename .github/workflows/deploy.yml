@@ -1,0 +1,36 @@
+name: Build and Deploy react vite project
+
+on:
+    push:
+        branches:
+            - develop
+jobs:
+    build-deploy:
+        runs-on: ubuntu-latest
+    
+        steps:
+            #check out the repo
+            - name: Checkout Repo
+              uses: actions/checkout@v6
+
+            #set up Nodejs
+            - name: Install Nodejs
+              uses: actions/setup-node@v6
+              with:
+                node-version: "22.x"
+
+            #Build project Dependencies
+            - name: Install Dependencies
+              run: npm install
+
+            #Build the Project
+            - name: Build Project
+              run: npm run build
+
+            #Deploy to Github Actions
+            - name: Deploy Project
+              uses: peaceiris/actions-gh-pages@v4
+              with: 
+                github_token: ${{secrets.GITHUB_TOKEN}}
+                publish_dir: dist
+        
