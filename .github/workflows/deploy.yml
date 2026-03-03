@@ -9,7 +9,7 @@ jobs:
     build-deploy:
         runs-on: ubuntu-latest
     
-        steps:
+        steps:  
             #check out the repo
             - name: Checkout Repo
               uses: actions/checkout@v6
@@ -30,7 +30,7 @@ jobs:
 
             #Deploy to Github Actions
             - name: Deploy Project
-              uses: peaceiris/actions-gh-pages@v4
+              uses: peaceiris/actions-gh-pages@v3
               with: 
                 github_token: ${{secrets.GITHUB_TOKEN}}
                 publish_dir: dist
