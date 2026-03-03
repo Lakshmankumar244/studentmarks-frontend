@@ -1,6 +1,7 @@
 name: Build and Deploy react vite project
 
 on:
+    workflow_dispatch:
     push:
         branches:
             - develop
