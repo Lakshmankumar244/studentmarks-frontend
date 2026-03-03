@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
+import { Navigate } from "react-router-dom";
 
 function UserTable(){
 
@@ -37,6 +38,7 @@ function UserTable(){
                     <td>{d.username}</td>
                     <td>{d.isStudent?"Yes":"No"}</td>
                     <td>{d.isActive?"Yes":"No"}</td>
+                    <td><button type="submit" onClick={<Navigate to={'/update/user/'}/>}>Edit</button></td>
                 </tr>
             ))
         }
